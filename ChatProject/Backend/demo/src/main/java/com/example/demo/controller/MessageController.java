@@ -16,6 +16,6 @@ public class MessageController {
 
     @GetMapping
     public void getMessage(){
-
+        System.out.println("salom");
     }
 }
