@@ -7,6 +7,7 @@ function App() {
   return (
     <div >
       <h1>Alek</h1>
+      <h1>Salom Xay yana</h1>
     </div>
   );
 }
