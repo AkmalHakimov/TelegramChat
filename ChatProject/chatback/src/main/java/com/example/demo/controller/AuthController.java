@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.config.Db;
-import com.example.demo.entty.User;
+import com.example.demo.entity.User;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +17,6 @@ public class AuthController {
 
     @PostMapping("/login")
     public HttpEntity<?> login(@RequestBody User user) throws SQLException {
-        System.out.println("salom");
         PreparedStatement preparedStatement = Db.getPreparedStatement("SELECT id,password from users where phone = ?");
         preparedStatement.setString(1,user.getPhone());
         ResultSet resultSet = preparedStatement.executeQuery();
@@ -30,7 +29,7 @@ public class AuthController {
                 return ResponseEntity.status(401).body("Login yoki parol xato");
             }
         }else {
-            return ResponseEntity.status(401).body("chakka");
+            return ResponseEntity.status(401).body("Bunday User mavjud emas!");
         }
     }
 }
