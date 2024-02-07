@@ -9,7 +9,7 @@ export default (url,method,data)=>{
         method,
         data,
         headers:{
-            "token": localStorage.getItem("key")
+            "key": localStorage.getItem("token")
         }
     })
 }

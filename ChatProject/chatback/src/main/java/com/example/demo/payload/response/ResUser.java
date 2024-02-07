@@ -1,6 +1,7 @@
-package com.example.demo.entty;
+package com.example.demo.payload.response;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,11 +11,10 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Message {
+@Builder
+public class ResUser {
     private UUID id;
-    private UUID toId;
-    private UUID fromId;
+    private String firstName,lastName,phone,lastText;
+    private Integer count;
     private Timestamp createdAt;
-    private String text;
-    private Boolean active = false;
 }

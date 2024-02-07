@@ -9,10 +9,4 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/message")
 public class MessageController {
 
-
-
-    @GetMapping
-    public void getMessage(){
-
-    }
 }
