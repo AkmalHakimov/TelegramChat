@@ -9,8 +9,6 @@ function App() {
 
   return (
     <div>
-      <Link to={"/login"} className="btn btn-dark m-3">Login</Link>
-      <Link to={"/home"} className="btn btn-success">Home</Link>
       <Routes>
         <Route element={<Login></Login>} path="/login"></Route>
         <Route element={<Home></Home>} path="/home"></Route>
