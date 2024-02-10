@@ -3,8 +3,10 @@ package com.example.demo.controller;
 
 import com.example.demo.config.Db;
 import com.example.demo.entity.Message;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.PreparedStatement;
@@ -19,6 +21,14 @@ import java.util.UUID;
 @CrossOrigin
 public class MessageController {
 
+    @Autowired
+    private SimpMessagingTemplate messagingTemplate;
+
+    @GetMapping("/test")
+    public void test(){
+        messagingTemplate.convertAndSend("/topics/chat", "asadbek");
+    }
+
     @PostMapping()
     public HttpEntity<?> postMessage(@RequestHeader String key, @RequestBody Message message) throws SQLException {
         try{
@@ -28,6 +38,8 @@ public class MessageController {
             preparedStatement.setString(3,message.getToId().toString());
             preparedStatement.setString(4,message.getText());
             preparedStatement.executeUpdate();
+            String x = "/topics/" + message.getToId();
+            messagingTemplate.convertAndSend(x, message);
             return ResponseEntity.ok("");
         }catch (Exception e){
             e.printStackTrace();
