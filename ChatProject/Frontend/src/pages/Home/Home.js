@@ -62,8 +62,8 @@ export default function Home() {
   }
 
   function getExactTime(item) {
-    let date = item.substring(0, 10);
-    let time = item.substring(11, 19);
+    let date = item?.substring(0, 10);
+    let time = item?.substring(11, 19);
     return date + " " + time;
   }
 
@@ -83,13 +83,14 @@ export default function Home() {
   }
 
   const onMessage = (msg) => {
-    console.log("ishladi");
+    getUsers()
+    getMessages(selectedUser.id)
   };
   return (
     <div className="big_box">
       <SockJsClient
         url="http://localhost:8080/ws"
-        topics={["/topics/chat"]}
+        topics={["/topics/" + currentUserId]}
         onMessage={onMessage}
         onConnect={()=>console.log("ulandi")}
       />
