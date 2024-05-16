@@ -54,7 +54,7 @@ public class MessageServiceImpl implements MessageService {
                    .text(message.getText())
                    .toId(message.getToId())
                    .build());
-           String x = "/topics/" + message.getToId();
+           String x = "/topics/" + message.getToId().getId();
            messagingTemplate.convertAndSend(x, message);
            return ResponseEntity.ok("");
        }catch (Exception e){

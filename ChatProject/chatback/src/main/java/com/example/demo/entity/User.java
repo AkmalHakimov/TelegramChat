@@ -21,4 +21,8 @@ public class User {
     private String lastName;
     private String phone;
     private String password;
+
+    public User(String id) {
+        this.id = UUID.fromString(id);
+    }
 }
