@@ -10,6 +10,6 @@ export default (url,method,data)=>{
         data,
         headers:{
             "key": localStorage.getItem("token")
-        }
+        }   
     })
 }

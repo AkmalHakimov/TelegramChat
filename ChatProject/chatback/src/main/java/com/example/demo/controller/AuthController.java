@@ -23,4 +23,5 @@ public class AuthController {
     public HttpEntity<?> login(@RequestBody User user) throws SQLException {
         return authService.login(user);
     }
+
 }

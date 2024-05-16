@@ -1,24 +1,19 @@
 {
-  "name": "front",
-  "version": "0.1.0",
+  "name": "mdb-react-template",
+  "version": "8.0.0",
+  "description": "template for mdb-react-ui-kit",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "antd": "^5.13.1",
-    "axios": "^1.6.5",
-    "bootstrap": "^5.3.2",
-    "ngx-toastr": "^18.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.2",
+    "axios": "^1.6.8",
+    "mdb-react-ui-kit": "8.0.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-router": "^6.23.1",
+    "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
     "react-stomp": "^5.1.0",
-    "react-toastify": "^10.0.4",
-    "react-toastr": "^3.0.0",
-    "resolve-url-loader": "^5.0.0",
-    "sass-loader": "^11.0.0",
+    "react-toastify": "^10.0.5",
+    "sass": "^1.77.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -27,12 +22,12 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
+  "keywords": [
+    "template",
+    "react"
+  ],
+  "author": "MDBootstrap",
+  "license": "SEE LICENSE IN <License.txt>",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -44,8 +39,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "sass": "^1.70.0"
   }
 }
